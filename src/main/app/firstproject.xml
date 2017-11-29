@@ -30,6 +30,7 @@ http://www.mulesoft.org/schema/mule/jms http://www.mulesoft.org/schema/mule/jms/
 			<db:parameterized-query><![CDATA[select * from flights]]></db:parameterized-query>
 		</db:select>
 		<json:object-to-json-transformer doc:name="Object to JSON2" />
+        <set-property propertyName="#['Content-Type']" value="#['application/json']" doc:name="Property"/>
 		<jms:outbound-endpoint queue="flight" connector-ref="Active_MQ" doc:name="JMS" />
 	</flow>
 	<flow name="logFlights">
