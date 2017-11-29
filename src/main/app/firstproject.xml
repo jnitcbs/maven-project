@@ -25,7 +25,7 @@ http://www.mulesoft.org/schema/mule/jms http://www.mulesoft.org/schema/mule/jms/
         <db:select config-ref="Derby_Configuration" doc:name="Database">
             <db:parameterized-query><![CDATA[select * from flights]]></db:parameterized-query>
         </db:select>
-        <json:object-to-json-transformer doc:name="Object to JSON"/>
+        <json:object-to-json-transformer doc:name="Object to JSON2"/>
         <jms:outbound-endpoint queue="flight" connector-ref="Active_MQ" doc:name="JMS"/>
     </flow>
     <flow name="logFlights">
